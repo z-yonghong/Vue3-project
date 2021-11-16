@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Edit from '../components/edit.vue';
-import App from '../App.vue';
+import Form from '../components/Form.vue';
 import View from '../components/view.vue';
 
 const history = createWebHistory();
@@ -9,7 +9,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      component: App
+      component: Form
     },
     {
       path: "/edit",

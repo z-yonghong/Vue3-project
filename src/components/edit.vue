@@ -1,35 +1,21 @@
 <template>
-  <el-table :data="tableData" border style="width: 100%">
-    <el-table-column prop="name" label="姓名" width="180" />
-    <el-table-column prop="age" label="年龄" width="180" />
-    <el-table-column prop="work" label="职业" />
-    <el-table-column label="Operations">
-      <template #default="scope">
-        <el-button size="mini" @click="handleEdit(scope.$index)"
-          >Edit</el-button
-        >
-        <el-button
-          size="mini"
-          type="danger"
-          @click="handleDelete(scope.$index, scope.row)"
-          >Delete</el-button
-        >
-      </template>
-    </el-table-column>
-  </el-table>
+<div class="content">
+    姓名：<input v-model="$route.query.name" /><br><br>
+    年龄：<input v-model="$route.query.age" /><br><br>
+    工作：<input v-model="$route.query.work" /><br><br>
+
+    <el-button size="mini" type="primary" @click="this.$router.go(-1)"> 返回 </el-button>
+    <el-button size="mini" type="success" > 确定 </el-button>
+</div>
 </template>
 
 <script setup>
-import { inject } from "vue"
-
-const tableData = inject("person")
-
-const handleDelete = (index) => {
-  tableData.value.splice(index, 1)
-}
 
 </script>
 
 <style>
-
+.content {
+  width: 500px;
+  margin: 100px auto;
+}
 </style>
