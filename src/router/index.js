@@ -12,7 +12,7 @@ const router = createRouter({
       component: Form
     },
     {
-      path: "/edit",
+      path: "/edit/:id",
       component: Edit
     },
     {

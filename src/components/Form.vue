@@ -61,14 +61,15 @@ const handleDelete = (index) => {
 }
 
 const editInfo = (router, info, index) => {
-  console.log(info)
+  // console.log(info)
   router.push({
-    path: "/edit",
-    query:{
-      name: info.name,
-      age: info.age,
-      work: info.work
-    },
+    path: `/edit/${index}`,
+    params: {index},
+    // query:{
+    //   name: info.name,
+    //   age: info.age,
+    //   work: info.work
+    // },
   })
 }
 
