@@ -18,8 +18,6 @@ const { go } = useRouter();
 const index = path.split("/").reverse()[0];
 const pInfo = ref(JSON.parse(localStorage.getItem("personData"))[index] || []);
 
-console.log(pInfo,"vvvv")
-
 const editInfo = (e) => {
   const newInfoArr = JSON.parse(localStorage.getItem("personData")) || [];
   newInfoArr[index] = pInfo.value;
